@@ -1,0 +1,2 @@
+wall size: 1
+objects and player size: 0.67887 
