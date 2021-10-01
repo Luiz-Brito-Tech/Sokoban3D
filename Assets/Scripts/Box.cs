@@ -5,6 +5,7 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     public bool m_OnMarker;//retorna verdadeiro se a caixa estiver em cima do marcador
+    public string color;
 
     public bool Move(Vector3 direction) //bloqueia o movimento diagonal
     {
@@ -44,10 +45,11 @@ public class Box : MonoBehaviour
 
     void TestForOnMarker()
     {
-        GameObject[] markers = GameObject.FindGameObjectsWithTag("Marker");
+        Marker[] markers = FindObjectsOfType<Marker>();
         foreach(var marker in markers)
         {
-            if (transform.position.x == marker.transform.position.x && transform.position.z == marker.transform.position.z)
+            if (transform.position.x == marker.transform.position.x && transform.position.z == marker.transform.position.z
+            && color == marker.color)
             {//está no marcador
                 m_OnMarker = true;
                 return;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7551047878534845555}
   - component: {fileID: 7551047878534845327}
   m_Layer: 0
-  m_Name: Box
+  m_Name: BlueBox
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 496c3d567087b5e328521a2ca65a3229, type: 2}
+  - {fileID: 2100000, guid: 0b73e59c1ee13d35cb2cd8eda9076a90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OnMarker: 0
+  color: blue

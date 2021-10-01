@@ -971,10 +971,14 @@ MonoBehaviour:
     m_Prefab: {fileID: 1021282811514361785, guid: ef984cea2a26fdddeb0b48354f1fc239, type: 3}
   - m_Character: '@'
     m_Prefab: {fileID: 2345680297276479199, guid: a8a9142a4111fe3c8b1cd3f7bd803933, type: 3}
-  - m_Character: $
+  - m_Character: Y
     m_Prefab: {fileID: 7551047878534845557, guid: 6e688e31ac069922e8fc6ca7e7eb0b4f, type: 3}
-  - m_Character: .
+  - m_Character: y
     m_Prefab: {fileID: 2900000327750537235, guid: cdadd8e8b5653767ca4b67bc0c25b08c, type: 3}
+  - m_Character: B
+    m_Prefab: {fileID: 7551047878534845557, guid: 6ba3c15e3ed9f76cba1b5e35d1190f66, type: 3}
+  - m_Character: b
+    m_Prefab: {fileID: 2900000327750537235, guid: 9c7c02c43db6bdfae8d672247ecbd43c, type: 3}
 --- !u!114 &2096759954
 MonoBehaviour:
   m_ObjectHideFlags: 0
