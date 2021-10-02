@@ -979,6 +979,14 @@ MonoBehaviour:
     m_Prefab: {fileID: 7551047878534845557, guid: 6ba3c15e3ed9f76cba1b5e35d1190f66, type: 3}
   - m_Character: b
     m_Prefab: {fileID: 2900000327750537235, guid: 9c7c02c43db6bdfae8d672247ecbd43c, type: 3}
+  - m_Character: R
+    m_Prefab: {fileID: 7551047878534845557, guid: f22c74da21a2b5a7892c53c0655c66c5, type: 3}
+  - m_Character: r
+    m_Prefab: {fileID: 2900000327750537235, guid: f87fa4ad4230c9eecbd44fe13e80ffff, type: 3}
+  - m_Character: G
+    m_Prefab: {fileID: 7551047878534845557, guid: ed0f77f5d7576475fb0402dceb40ca5e, type: 3}
+  - m_Character: g
+    m_Prefab: {fileID: 2900000327750537235, guid: 88d276f8fb7d6bdd8b2238cdd82eb000, type: 3}
 --- !u!114 &2096759954
 MonoBehaviour:
   m_ObjectHideFlags: 0
