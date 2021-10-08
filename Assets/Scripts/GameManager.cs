@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     public void ClearScene()
     {
-        string[] tagsToBeDestroyed = {"Wall", "Box", "Player", "Marker"};
+        string[] tagsToBeDestroyed = {"Wall", "Box", "Player", "Marker", "Ground"};
         foreach(string tag in tagsToBeDestroyed)
         {
             var objects = GameObject.FindGameObjectsWithTag(tag);

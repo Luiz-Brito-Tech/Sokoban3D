@@ -14,6 +14,7 @@ public class LevelBuilder : MonoBehaviour
     public int m_CurrentLevel;
     public List<LevelElement> m_LevelElements;
     private Level m_Level;
+    [SerializeField] private GameObject ground;
 
     GameObject GetPrefab(char c)
     {
@@ -52,12 +53,13 @@ public class LevelBuilder : MonoBehaviour
                 if(prefab)
                 {
                     Instantiate(prefab, new Vector3(x, 0, z), Quaternion.identity);
+                    Instantiate(ground, new Vector3(x, -1, z), Quaternion.identity);
                 }
                 x++;
             }
             z--;
             x = startx;
-        }
+        }//Percorre as linhas (z) e colunas (x) do bloco de texto e instancia os prefabs de acordo.
         Debug.Log(GetComponent<Levels>().m_Levels.Count);
     }
 }
