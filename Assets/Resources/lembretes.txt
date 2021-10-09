@@ -1,1 +1,2 @@
-- Otimizar código de detecção do Teleporter.cs 
+- Implementar detecção do teleporter nos scripts do player e da caixa
+para que o código identifique quando que algo entra ou sai do teleporter.

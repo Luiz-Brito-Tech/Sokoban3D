@@ -668,7 +668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &871566559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -758,7 +758,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedTeleporter: {fileID: 985790457}
-  linkedTeleporterScript: {fileID: 985790462}
 --- !u!1 &985790457
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,14 +770,13 @@ GameObject:
   - component: {fileID: 985790460}
   - component: {fileID: 985790459}
   - component: {fileID: 985790458}
-  - component: {fileID: 985790462}
   m_Layer: 0
   m_Name: portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &985790458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -855,20 +853,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &985790462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985790457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8d84c1bd6c5a8f95b26e785ef98711e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linkedTeleporter: {fileID: 871566558}
-  linkedTeleporterScript: {fileID: 871566563}
 --- !u!1 &1008505719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ed29edf4bce12b4b03986a6551404d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: testlevels
+  filename: levelsvol1
   m_Levels: []
 --- !u!4 &2096759955
 Transform:

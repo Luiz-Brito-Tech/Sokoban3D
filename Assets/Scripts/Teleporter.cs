@@ -5,26 +5,23 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     public GameObject linkedTeleporter;
-    public Teleporter linkedTeleporterScript;
 
     void Update()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (var player in players)
+        string[] tagsToBeFound = {"Box", "Player"};
+        foreach(string tag in tagsToBeFound)
         {
-            if (player.transform.position.x == this.transform.position.x && player.transform.position.z == this.transform.position.z)
+            var objects = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject o in objects)
             {
-                linkedTeleporterScript.enabled = false;
-                player.transform.position = linkedTeleporter.transform.position;
-            }
-        }
-        GameObject[] boxes = GameObject.FindGameObjectsWithTag("Box");
-        foreach(var box in boxes)
-        {
-            if (box.transform.position.x == this.transform.position.x && box.transform.position.z == this.transform.position.z)
-            {
-                linkedTeleporterScript.enabled = false;
-                box.transform.position = linkedTeleporter.transform.position;
+                if (o.transform.position.x == this.transform.position.x && o.transform.position.z == this.transform.position.z)
+                {
+                    o.transform.position = linkedTeleporter.transform.position;
+                }
+                else if(o.transform.position.x == linkedTeleporter.transform.position.x && o.transform.position.z == linkedTeleporter.transform.position.z)
+                {
+                    o.transform.position = this.transform.position;
+                }
             }
         }
     }
