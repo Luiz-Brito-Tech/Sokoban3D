@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb53cbd84d9c45b1494f06084fba79e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDuration: 0.2
   m_OnMarker: 0
   color: green
 --- !u!1001 &5907041518148771573

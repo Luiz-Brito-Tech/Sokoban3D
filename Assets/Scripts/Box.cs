@@ -1,9 +1,11 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Box : MonoBehaviour
 {
+    [SerializeField] private float moveDuration;
     public bool m_OnMarker;//retorna verdadeiro se a caixa estiver em cima do marcador
     public string color;
 
@@ -15,10 +17,18 @@ public class Box : MonoBehaviour
         }
         else
         {
-            transform.Translate(direction); //a caixa não está bloqueada, então pode se mover
-            TestForOnMarker();
+            //a caixa não está bloqueada, então pode se mover
+            StartCoroutine(MoveBox(direction));
             return true;
         }   
+    }
+
+    IEnumerator MoveBox(Vector3 d)
+    {
+        transform.DOMove(transform.position + d, moveDuration);
+        yield return new WaitForSeconds(moveDuration);
+        TestForOnMarker();
+        yield return null;
     }
 
     bool BoxBlocked(Vector3 position, Vector3 direction)

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public LevelBuilder m_LevelBuilder;
     public GameObject m_NextButton;
-    private bool m_ReadyForInput;
+    //private bool m_ReadyForInput;
     private Player m_Player;
 
     void Start()
@@ -17,21 +17,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        moveInput.Normalize();
-        if (moveInput.sqrMagnitude > 0.5f) //tecla pressionada ou segurada
-        {
-            if(m_ReadyForInput)
-            {
-                m_ReadyForInput = false;
-                m_Player.Move(moveInput);
-                m_NextButton.SetActive(IsLevelComplete());
-            }
-        } 
-        else
-        {
-            m_ReadyForInput = true;
-        }
+        m_NextButton.SetActive(IsLevelComplete());
+        m_Player.Movement();
     }
 
     public void NextLevel()
