@@ -1,2 +1,13 @@
 wall size: 1
 objects and player size: 0.67887 
+
+Camera position:
+x: 0
+y: 10
+z: -4.5
+
+Camera rotation:
+
+x: 70
+
+Camera color: 416FC3

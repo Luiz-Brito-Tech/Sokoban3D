@@ -1,2 +1,6 @@
 - Implementar detecção do teleporter nos scripts do player e da caixa
 para que o código identifique quando que algo entra ou sai do teleporter.
+
+- Ver se tem um jeito de facilitar a adição de levels
+
+- Baixar: https://www.dafont.com/pt/a-atomic-md.font
