@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
+    [SerializeField] private AudioSource dragSound;
     [SerializeField] private float moveDuration;
     public bool m_OnMarker;//retorna verdadeiro se a caixa estiver em cima do marcador
     public string color;
@@ -26,6 +27,7 @@ public class Box : MonoBehaviour
     IEnumerator MoveBox(Vector3 d)
     {
         transform.DOMove(transform.position + d, moveDuration);
+        dragSound.Play();
         yield return new WaitForSeconds(moveDuration);
         TestForOnMarker();
         yield return null;
@@ -62,6 +64,7 @@ public class Box : MonoBehaviour
             && color == marker.color)
             {//está no marcador
                 m_OnMarker = true;
+                marker.sfx.Play();
                 return;
             }
         }

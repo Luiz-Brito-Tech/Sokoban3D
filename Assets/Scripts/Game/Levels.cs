@@ -38,10 +38,6 @@ public class Levels : MonoBehaviour
             Debug.Log($"Levels: {filename}.txt does not exist!");
             return;
         }
-        else
-        {
-            Debug.Log("Levels imported");
-        }
         string completeText = textAsset.text;
         string[] lines;
         lines = completeText.Split(new string[] {"\n"}, System.StringSplitOptions.None);

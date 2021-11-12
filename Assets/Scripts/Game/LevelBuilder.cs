@@ -28,19 +28,15 @@ public class LevelBuilder : MonoBehaviour
     public void NextLevel()
     {
         m_CurrentLevel++;
-        Debug.Log(m_CurrentLevel);
-        Debug.Log(GetComponent<Levels>().m_Levels.Count);
         if (m_CurrentLevel == GetComponent<Levels>().m_Levels.Count)
         {
             m_CurrentLevel = 0;//Volta para o primeiro level
         }
-        Debug.Log(m_CurrentLevel);
     }
 
     public void Build()
     {
         m_Level = GetComponent<Levels>().m_Levels[m_CurrentLevel];
-        Debug.Log(m_CurrentLevel);
         //Coordenadas offset para que o centro do level fique em 0,0
         int startx = -m_Level.Width / 2;//Salva a posição x inicial já que esta precisa ser resetada a cada fileira/linha(row)
         int x = startx;
@@ -60,6 +56,5 @@ public class LevelBuilder : MonoBehaviour
             z--;
             x = startx;
         }//Percorre as linhas (z) e colunas (x) do bloco de texto e instancia os prefabs de acordo.
-        Debug.Log(GetComponent<Levels>().m_Levels.Count);
     }
 }

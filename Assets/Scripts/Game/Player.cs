@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveDuration;
     [SerializeField]private bool m_ReadyForInput;
     Vector3 moveInput;
+    //SCORE
+    public float movements;
 
     public void Movement()
     {
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour
 
     IEnumerator MovePlayer(Vector3 direction)
     {
+            movements++;
             transform.DOMove(transform.position + direction, moveDuration);
             yield return new WaitForSeconds(moveDuration);
             m_ReadyForInput = true;
