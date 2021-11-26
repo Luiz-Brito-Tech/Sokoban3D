@@ -140,7 +140,7 @@ Material:
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 0, b: 0.029715061, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 52.500324, g: 0.24764363, b: 0.45255297, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _GroundColor: {r: 0.369, g: 0.349, b: 0.341, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}

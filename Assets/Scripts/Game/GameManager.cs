@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour
 {
     public LevelBuilder m_LevelBuilder;
     public GameObject m_NextButton;
+    public GameObject pauseMenu;
     public AudioSource completeSound;
+    public AudioSource music;
+    public AudioSource clickSound;
+    bool GameIsPaused = false;
     //SCORE_______________________________________
-    [SerializeField] private Text placedBoxesText;
     [SerializeField] private Text movementsText;
     [SerializeField] private Text timerText;
     private float startTime;
@@ -38,18 +41,39 @@ public class GameManager : MonoBehaviour
         }
         m_Player.Movement();
         Box[] boxes = FindObjectsOfType<Box>();
-        placedBoxesText.text = placedBoxes().ToString() + "/" + boxes.Length.ToString();
         movementsText.text = "MOVEMENTS: " + m_Player.movements.ToString();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPaused is true)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(nextScene);
+        StartCoroutine(WaitForSoundAndPass(nextScene));
     }
+
 
     public void ResetScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(WaitForSoundAndPass(SceneManager.GetActiveScene().name));
+    }
+
+    IEnumerator WaitForSoundAndPass(string scene)
+    {
+        if (Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
+        yield return new WaitForSeconds(.2f);
+        SceneManager.LoadScene(scene);
     }
 
     public bool IsLevelComplete()
@@ -89,6 +113,51 @@ public class GameManager : MonoBehaviour
         string minutes = ((int) t / 60).ToString("00");
         string seconds = (t % 60).ToString("00");
         timerText.text = minutes + ":" + seconds;
+    }
+
+    public void Resume()
+    {
+        StartCoroutine(WaitForSoundAndResume());
+    }
+
+    void Pause()
+    {
+        StartCoroutine(WaitForSoundAndPause());
+    }
+
+    public void GoToMenu()
+    {
+        StartCoroutine(WaitForSoundAndPass("Main Menu"));
+    }
+
+    public void ExitGame()
+    {
+        StartCoroutine(WaitForSoundAndExit());
+    }
+
+    IEnumerator WaitForSoundAndPause()
+    {
+        pauseMenu.SetActive(true);
+        clickSound.Play();
+        yield return new WaitForSeconds(.2f);
+        GameIsPaused = true;
+        Time.timeScale = 0f;
+    }
+
+    IEnumerator WaitForSoundAndResume()
+    {
+        Time.timeScale = 1f;
+        clickSound.Play();
+        yield return new WaitForSeconds(.2f);
+        GameIsPaused = false;
+        pauseMenu.SetActive(false);
+    }
+
+    IEnumerator WaitForSoundAndExit()
+    {
+        Time.timeScale = 1f;
+        yield return new WaitForSeconds(.2f);
+        Application.Quit();
     }
 
 }

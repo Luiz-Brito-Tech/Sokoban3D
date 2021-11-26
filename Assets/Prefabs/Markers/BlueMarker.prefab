@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2900000327750537235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: -0.339435, z: -2}
-  m_LocalScale: {x: 0.67887, y: 0.67887, z: 0.67887}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,6 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: blue
   sfx: {fileID: 0}
+  material:
+  - {fileID: 2100000, guid: cf673ec101ec827ee8e8874e94aa3725, type: 2}
+  - {fileID: 2100000, guid: 1b98d4b57e5b20e9db72e4f72c097b33, type: 2}
+  materialIndex: 0
 --- !u!82 &-4548605406137825516
 AudioSource:
   m_ObjectHideFlags: 0

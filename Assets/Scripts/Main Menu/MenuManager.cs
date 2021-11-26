@@ -7,12 +7,13 @@ public class MenuManager : MonoBehaviour
 {
     public void PlayButton()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(WaitForSoundAndStart());
     }
 
-    public void LevelsButton()
+    IEnumerator WaitForSoundAndStart()
     {
-        print("Opens the menu that displays the unlocked levels");
+        yield return new WaitForSeconds(.2f);
+        SceneManager.LoadScene(1);
     }
 
     public void ExitButton()
